@@ -1,0 +1,17 @@
+You are given an array arr of length N. You have to return a list of integers containing the NGE(next greater element) of each element of the given array.
+The NGE for an element X is the first greater element on the right side of X in the array. 
+Elements for which no greater element exists, consider the NGE as -1.
+Input-
+1
+4
+9 3 6 5
+
+Output-
+-1 6 -1 -1
+
+
+Explanation For Sample Input :
+For element 9, there is no next greater element. So -1 would be the next greater element.
+For element 3, 6 is the next greater element. 
+For element 6, there is no next greater element. So -1 would be the next greater element.
+For element 5, there is no next greater element. So -1 would be the next greater element.
