@@ -15,3 +15,57 @@ For element 9, there is no next greater element. So -1 would be the next greater
 For element 3, 6 is the next greater element. 
 For element 6, there is no next greater element. So -1 would be the next greater element.
 For element 5, there is no next greater element. So -1 would be the next greater element.
+
+
+
+
+Solution - Optimal Approach
+
+
+
+Initialise an array ans of length N to store the next greater number of arr[i] at index i.
+Create a stack of type integer, where we will store the smaller element at the top.
+Traverse the array from backwards, because when we will arrive at a certain index its next greater element will be already in the stack and we can easily get this element.
+For every element at index I,
+We will pop the elements from the stack till we get the greater element on top of the stack from the current element and that element will be the answer for the current element.
+If the stack gets empty while doing the pop operation then the answer would be -1.
+Store the next greater element in the array and.
+Push the current element of the array into the stack.
+Finally, return the array ans.
+Time Complexity
+O(N), where N is the length of the given array.
+
+ 
+
+In the worst case, we will be pushing and popping all the elements into the stack only once. Thus complexity would be O(N).
+
+Space Complexity
+O(N), where N is the length of the given array.
+
+ 
+
+In the worst case, all the elements can be in the stack.
+
+
+
+
+
+Code- python
+
+
+
+
+a=[0]*n   // we will store output Array
+s=[]
+for i in range(n-1,-1-1):
+        
+        while(len(s)>0 and  s[len(s)-1] <= arr[i] ):
+            s.pop()
+                  
+        if(len(s)==0):
+            a[i] =-1
+        else:
+            a[i] = s[len(s)-1]
+            
+        s.append(arr[i])        
+    return a
